@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=412, initial-scale=1.0">
     <title>SHMUPSIK</title>
     <style>
         body {
@@ -10,6 +10,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             overflow-y: scroll;
+            width: 100%;
         }
         header {
             position: fixed;
@@ -41,13 +42,14 @@
             padding-bottom: 50px; /* To avoid footer overlap */
         }
         .video-container, .photo-container {
-            width: 100%;
+            width: 412px; /* Set width to 412px */
             display: flex;
+            flex-direction: column; /* Arrange videos and images in a column */
             justify-content: center;
             margin-top: 10px;
         }
         video, img {
-            max-width: 100%;
+            width: 100%; /* Make video and images fit within 412px */
             height: auto;
         }
         .background-video {
@@ -56,28 +58,10 @@
             object-fit: cover;
         }
         .photo-container img {
-            width: 600px;
-        }
-        .photo-container img:nth-child(1),
-        .photo-container img:nth-child(2),
-        .photo-container img:nth-child(3) {
-            height: 1066.67px;
-        }
-        .photo-container img:nth-child(4) {
-            height: 540.63px;
+            width: 100%; /* Ensure photos fit within the 412px width */
         }
         .video-container video {
-            width: 600px;
-        }
-        .video-container video:nth-child(1) {
-            height: 1070.1px;
-        }
-        .video-container video:nth-child(2),
-        .video-container video:nth-child(3),
-        .video-container video:nth-child(4),
-        .video-container video:nth-child(5),
-        .video-container video:nth-child(6) {
-            height: 1066.67px;
+            width: 100%; /* Ensure videos fit within the 412px width */
         }
     </style>
 </head>
@@ -133,4 +117,3 @@
 
 </body>
 </html>
-
