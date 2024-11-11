@@ -20,19 +20,9 @@
             text-align: center;
             z-index: 10;
         }
-        header button {
-            background-color: transparent;
+        header h1 {
             color: white;
-            border: none;
-            font-size: 18px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        header button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        main {
-            margin-top: 60px;
+            font-size: 24px;
         }
         footer {
             position: fixed;
@@ -47,6 +37,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 60px;
+            padding-bottom: 50px; /* To avoid footer overlap */
         }
         .video-container, .photo-container {
             width: 100%;
@@ -59,13 +51,9 @@
             height: auto;
         }
         .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            z-index: -1;
         }
         .photo-container img {
             width: 600px;
@@ -96,44 +84,45 @@
 <body>
 
 <header>
-    <button id="videosButton">VIDEOS</button>
-    <button id="photosButton">PHOTOS</button>
+    <h1>SHMUPSIK</h1>
 </header>
 
 <main>
     <div class="content" id="content">
-        <div class="video-container" id="videoContainer" style="display: none;">
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1KwAm596lZKG9qRpmSM0TrEeZq65x33BU" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1zct8ygA22_AMI5mnQqZS6UJPtfjxnR4E" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1FiGDF10erEGMjoaxUmazg0UOPmlTOlmZ" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1Nlw0nlnuIrCWkIGDjSkqlnuczjhg6opy" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1nmF3K7DaR6_Y9TGsbeWZ-ztJSHSdmUtG" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
-            <video class="background-video" autoplay muted loop>
-                <source src="https://drive.google.com/uc?export=download&id=1fmTrdlYy7843AiEMIoiXprP5xnlpOCjV" type="video/mp4">
-                Ваш браузер не поддерживает тег видео.
-            </video>
+        <!-- Photo Section -->
+        <div class="photo-container">
+            <img src="https://i.imgur.com/H1Gtxig.jpg" alt="Фото 1">
+            <img src="https://i.imgur.com/fEPMWly.jpg" alt="Фото 2">
+            <img src="https://i.imgur.com/kbP4rBH.jpg" alt="Фото 3">
+            <img src="https://i.imgur.com/L19JmVc.jpg" alt="Фото 4">
         </div>
 
-        <div class="photo-container" id="photoContainer" style="display: none;">
-            <img src="https://drive.google.com/uc?export=view&id=1N1M-JESsrSV8a9V0XA_am1kl7kHwJnyT" alt="Фото 1">
-            <img src="https://drive.google.com/uc?export=view&id=1-K8Qf9kEcUkg1Pi8a9ucvX-HV9rKV2zl" alt="Фото 2">
-            <img src="https://drive.google.com/uc?export=view&id=12hpb0Cp2JIRXFmmMbkN46Yq77QVHYPNM" alt="Фото 3">
-            <img src="https://drive.google.com/uc?export=view&id=15DDoVED2PSHZeDCObDS8nLpvJzrhNPcv" alt="Фото 4">
+        <!-- Video Section -->
+        <div class="video-container">
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/KIhf1aq.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/qikGVuk.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/M4hxaWt.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/KfDfOY9.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/q1cWH3L.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
+            <video class="background-video" autoplay muted loop>
+                <source src="https://i.imgur.com/EODoYVm.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег видео.
+            </video>
         </div>
     </div>
 </main>
@@ -142,17 +131,6 @@
     © 2024 SHMUPSIK
 </footer>
 
-<script>
-    document.getElementById('videosButton').addEventListener('click', function() {
-        document.getElementById('photoContainer').style.display = 'none';
-        document.getElementById('videoContainer').style.display = 'flex';
-    });
-
-    document.getElementById('photosButton').addEventListener('click', function() {
-        document.getElementById('videoContainer').style.display = 'none';
-        document.getElementById('photoContainer').style.display = 'flex';
-    });
-</script>
-
 </body>
 </html>
+
