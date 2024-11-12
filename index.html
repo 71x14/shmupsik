@@ -109,7 +109,7 @@
     <!-- Countdown Timer Section -->
     <div class="countdown">
         <div id="countdown-timer">Загрузка...</div>
-        <img src="https://imgur.com/Pcj3DJ5.png" alt="до др котеночка">
+        <img src="до др котеночка.png" alt="до др котеночка" id="birthday-image">
     </div>
 </div>
 
@@ -134,7 +134,8 @@
 
         // Если обратный отсчет завершен
         if (distance < 0) {
-            document.getElementById("countdown-timer").innerHTML = "С Днем Рождения, Котеночек Любимый!❤️‍🔥";
+            document.getElementById("countdown-timer").innerHTML = "С Днем Рождения, Котеночек!";
+            document.getElementById("birthday-image").style.display = "none"; // Скрываем изображение
         }
     }
 
