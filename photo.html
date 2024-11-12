@@ -53,6 +53,22 @@
             height: auto;
             margin-bottom: 10px;
         }
+        .navigation-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .navigation-buttons button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .navigation-buttons button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Ink+Free&display=swap" rel="stylesheet">
 </head>
@@ -70,6 +86,11 @@
                 <img src="https://i.imgur.com/AuxBGwA.jpg" alt="Фото 2">
                 <img src="https://i.imgur.com/Y0LIk6M.jpg" alt="Фото 3">
                 <img src="https://i.imgur.com/XYiceUh.jpg" alt="Фото 4">
+            </div>
+            <!-- Навигационные кнопки -->
+            <div class="navigation-buttons">
+                <button onclick="window.location.href='index.html'">Главная</button>
+                <button onclick="window.location.href='video.html'">Видео</button>
             </div>
         </div>
     </main>
