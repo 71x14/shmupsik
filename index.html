@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=412, initial-scale=1.0">
     <title>SHMUPSIK</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
-        
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Lato', sans-serif;
-            background-color: #183059;
+            font-family: Arial, sans-serif;
+            background-color: black;
             color: white;
             overflow-y: scroll;
             width: 100%;
@@ -19,219 +17,130 @@
             justify-content: center;
         }
         .container {
-            width: 650px;
-            height: 480px;
-            position: relative;
-            margin: auto;
-            overflow: hidden;
+            width: 412px;
         }
-        h1 {
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
             text-align: center;
-            margin-top: 2em;
-            font-size: 1em;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #F6F4F3;
+            z-index: 10;
         }
-        #timer {
-            color: #F6F4F3;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 0.7em;
-            letter-spacing: 5px;
-            margin-top: 25%;
-        }
-        .days, .hours, .minutes, .seconds {
-            display: inline-block;
-            padding: 20px;
-            width: 100px;
-            border-radius: 5px;
-        }
-        .days {
-            background: #EF2F3C;
-        }
-        .hours {
-            background: #F6F4F3;
-            color: #183059;
-        }
-        .minutes {
-            background: #276FBF;
-        }
-        .seconds {
-            background: #F0A202;
-        }
-        .numbers {
-            font-family: 'Montserrat', sans-serif;
-            color: #183059;
-            font-size: 4em;
-        }
-        .balloon {
-            position: absolute;
-            border: 1px solid #000;
-            border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
-            z-index: 2;
-        }
-        .balloon.white {
-            background: #F6F4F3;
-            height: 85px;
-            width: 75px;
-            left: 30%;
-            top: 2%;
-        }
-        .balloon.red {
-            background: #EF2F3C;
-            height: 65px;
-            width: 70px;
-            left: 18%;
-            top: 9%;
-        }
-        .balloon.blue {
-            background: #276FBF;
-            height: 80px;
-            width: 80px;
-            left: 60%;
-            top: 5%;
-        }
-        .eye {
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            top: 40%;
-            left: 22%;
-            background: #000;
-            border-radius: 50%;
-        }
-        .eye:after {
-            content: '';
-            left: 35px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #000;
-            position: absolute;
-        }
-        .mouth {
-            position: absolute;
-            top: 45%;
-            left: 43%;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            border: 2px solid;
-            border-color: transparent #000 #000 transparent;
-            transform: rotate(45deg);
-        }
-        .triangle {
-            position: absolute;
-            left: 40%;
-            bottom: -10%;
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 14px solid;
-        }
-        .string {
-            position: absolute;
-            height: 70px;
-            width: 1px;
-            left: 48%;
-            top: 100%;
-            z-index: -1;
-            background: inherit;
-            border: 1px solid;
-        }
-        .star {
-            width: 20px;
-            height: 20px;
-            background: #F6F4F3;
-            -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        }
-        .star-red {
-            width: 30px;
-            height: 30px;
-            background: #EF2F3C;
-            margin-left: 51px;
-            margin-top: -5px;
-            -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        header img {
+            height: 50px;
         }
         footer {
             position: fixed;
             bottom: 0;
-            right: 0;
-            text-transform: uppercase;
-            padding: 10px;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.7em;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            color: white;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+            padding-bottom: 50px;
+        }
+        .first-page {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .first-page img.background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .first-page .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #FF8080;
+            font-size: 32px;
+        }
+        .first-page .buttons {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        .first-page .buttons img {
+            width: 150px;
+            cursor: pointer;
+        }
+        .countdown {
+            position: relative;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #FF8080;
+        }
+        .countdown img {
+            margin-top: 10px;
+            width: 300px;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="balloon white">
-        <div class="star-red"></div>
-        <div class="face">
-            <div class="eye"></div>
-            <div class="mouth"></div>
+    <!-- First Page -->
+    <div class="first-page">
+        <img src="https://i.imgur.com/jKL2gy1.jpg" alt="Background Image" class="background">
+        <div class="title">
+            <img src="https://imgur.com/71RC71f.png" alt="SHMUPSIK">
         </div>
-        <div class="triangle" style="border-bottom-color: #F6F4F3;"></div>
-        <div class="string"></div>
-    </div>
-
-    <div class="balloon red">
-        <div class="star"></div>
-        <div class="face">
-            <div class="eye"></div>
-            <div class="mouth"></div>
+        <div class="buttons">
+            <img src="https://imgur.com/jH8jMxQ.png" alt="Photo" onclick="window.location.href='photo.html'">
+            <img src="https://imgur.com/BggaIx2.png" alt="Video" onclick="window.location.href='video.html'">
         </div>
-        <div class="triangle" style="border-bottom-color: #EF2F3C;"></div>
-        <div class="string"></div>
     </div>
-
-    <div class="balloon blue">
-        <div class="star"></div>
-        <div class="face">
-            <div class="eye"></div>
-            <div class="mouth"></div>
-        </div>
-        <div class="triangle" style="border-bottom-color: #276FBF;"></div>
-        <div class="string"></div>
+    
+    <!-- Countdown Timer Section -->
+    <div class="countdown">
+        <div id="countdown-timer">Загрузка...</div>
+        <img src="https://imgur.com/L7Ytw8r.png" alt="до др котеночка" id="birthday-image">
     </div>
-
-    <div id="timer"></div>
-    <h1>до др котеночка</h1>
 </div>
 
-<footer>
-    <p>made by <a href="https://codepen.io/juliepark"> julie</a> ♡</p>
-</footer>
-
 <script>
-    const targetDate = new Date("January 25, 2025 00:00:00").getTime();
-
-    let timer = setInterval(function() {
+    // Функция для обновления обратного отсчета
+    function updateCountdown() {
+        const targetDate = new Date("January 25, 2025 00:00:00").getTime();
         const now = new Date().getTime();
-        const diff = targetDate - now;
+        const distance = targetDate - now;
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        // Вычисляем оставшиеся месяцы, дни, часы, минуты и секунды
+        const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("timer").innerHTML =
-            "<div class=\"days\"> <div class=\"numbers\">" + days + "</div>дней</div> \
-            <div class=\"hours\"> <div class=\"numbers\">" + hours + "</div>часов</div> \
-            <div class=\"minutes\"> <div class=\"numbers\">" + minutes + "</div>минут</div> \
-            <div class=\"seconds\"> <div class=\"numbers\">" + seconds + "</div>секунд</div>";
+        // Обновляем текст обратного отсчета
+        document.getElementById("countdown-timer").innerHTML =
+            months + " месяцев " + days + " дней " + hours + " часов " + 
+            minutes + " минут " + seconds + " секунд";
 
-        if (diff < 0) {
-            clearInterval(timer);
-            document.getElementById("timer").innerHTML = "С Днем Рождения, Котеночек!";
+        // Если обратный отсчет завершен
+        if (distance < 0) {
+            document.getElementById("countdown-timer").innerHTML = "С Днем Рождения, Котеночек!";
+            document.getElementById("birthday-image").style.display = "none"; // Скрываем изображение
         }
-    }, 1000);
+    }
+
+    // Обновление счетчика каждую секунду
+    setInterval(updateCountdown, 1000);
 </script>
 
 </body>
