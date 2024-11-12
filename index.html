@@ -28,10 +28,8 @@
             text-align: center;
             z-index: 10;
         }
-        header h1 {
-            font-family: 'Inspiration', sans-serif;
-            font-size: 32px;
-            color: #33FF00;
+        header img {
+            height: 50px;
         }
         footer {
             position: fixed;
@@ -54,7 +52,7 @@
             width: 100%;
             height: 100vh;
         }
-        .first-page img {
+        .first-page img.background {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -64,7 +62,6 @@
             top: 10%;
             left: 50%;
             transform: translateX(-50%);
-            font-family: 'Inspiration', sans-serif;
             color: #FF8080;
             font-size: 32px;
         }
@@ -76,30 +73,24 @@
             display: flex;
             gap: 20px;
         }
-        .first-page button {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
+        .first-page .buttons img {
+            width: 60px;
             cursor: pointer;
         }
-        .first-page button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
     <!-- First Page -->
     <div class="first-page">
-        <img src="https://i.imgur.com/BarA6iW.jpg" alt="Background Image">
-        <div class="title">SHMUPSIK</div>
+        <img src="https://i.imgur.com/Y0LIk6M.jpg" alt="Background Image" class="background">
+        <div class="title">
+            <img src="SHMUPSIK.png" alt="SHMUPSIK">
+        </div>
         <div class="buttons">
-            <button onclick="window.location.href='photo.html'">Photo</button>
-            <button onclick="window.location.href='video.html'">Video</button>
+            <img src="photo.png" alt="Photo" onclick="window.location.href='photo.html'">
+            <img src="video.png" alt="Video" onclick="window.location.href='video.html'">
         </div>
     </div>
 </div>
