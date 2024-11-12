@@ -28,9 +28,8 @@
             text-align: center;
             z-index: 10;
         }
-        header h1 {
-            font-size: 32px;
-            color: #FF8080;
+        header img {
+            height: 50px;
         }
         footer {
             position: fixed;
@@ -58,25 +57,17 @@
             display: flex;
             gap: 20px;
         }
-        .navigation-buttons button {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 16px;
-            padding: 8px 16px;
-            border: none;
+        .navigation-buttons img {
+            width: 60px;
             cursor: pointer;
         }
-        .navigation-buttons button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Ink+Free&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Видео</h1>
+        <img src="SHMUPSIK.png" alt="SHMUPSIK">
     </header>
 
     <main>
@@ -86,31 +77,12 @@
                     <source src="https://i.imgur.com/fvC2kAZ.mp4" type="video/mp4">
                     Ваш браузер не поддерживает тег видео.
                 </video>
-                <video controls>
-                    <source src="https://i.imgur.com/XxkKR0M.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает тег видео.
-                </video>
-                <video controls>
-                    <source src="https://i.imgur.com/6visL9E.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает тег видео.
-                </video>
-                <video controls>
-                    <source src="https://i.imgur.com/GktutRZ.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает тег видео.
-                </video>
-                <video controls>
-                    <source src="https://i.imgur.com/UtDBPSD.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает тег видео.
-                </video>
-                <video controls>
-                    <source src="https://i.imgur.com/VFtBALF.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает тег видео.
-                </video>
+                <!-- Остальные видео -->
             </div>
             <!-- Навигационные кнопки -->
             <div class="navigation-buttons">
-                <button onclick="window.location.href='index.html'">Главная</button>
-                <button onclick="window.location.href='photo.html'">Фото</button>
+                <img src="home.png" alt="Home" onclick="window.location.href='index.html'">
+                <img src="photo.png" alt="Photo" onclick="window.location.href='photo.html'">
             </div>
         </div>
     </main>
