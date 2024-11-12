@@ -77,6 +77,18 @@
             width: 60px;
             cursor: pointer;
         }
+        .countdown {
+            position: relative;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #FF8080;
+        }
+        .countdown img {
+            margin-top: 10px;
+            width: 300px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -84,16 +96,51 @@
 <div class="container">
     <!-- First Page -->
     <div class="first-page">
-        <img src="https://i.imgur.com/Y0LIk6M.jpg" alt="Background Image" class="background">
+        <img src="https://imgur.com/jKL2gy1.jpg" alt="Background Image" class="background">
         <div class="title">
-            <img src="https://imgur.com/AV9lmaL.png" alt="SHMUPSIK">
+            <img src="https://imgur.com/Yxi95Tz.png" alt="SHMUPSIK">
         </div>
         <div class="buttons">
             <img src="https://imgur.com/nrlU67Y.png" alt="Photo" onclick="window.location.href='photo.html'">
             <img src="https://imgur.com/GOxnk8U.png" alt="Video" onclick="window.location.href='video.html'">
         </div>
     </div>
+    
+    <!-- Countdown Timer Section -->
+    <div class="countdown">
+        <div id="countdown-timer">Загрузка...</div>
+        <img src="https://imgur.com/Pcj3DJ5.png" alt="до др котеночка">
+    </div>
 </div>
+
+<script>
+    // Функция для обновления обратного отсчета
+    function updateCountdown() {
+        const targetDate = new Date("January 25, 2024 00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // Вычисляем оставшиеся месяцы, дни, часы, минуты и секунды
+        const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Обновляем текст обратного отсчета
+        document.getElementById("countdown-timer").innerHTML =
+            months + " месяцев " + days + " дней " + hours + " часов " + 
+            minutes + " минут " + seconds + " секунд";
+
+        // Если обратный отсчет завершен
+        if (distance < 0) {
+            document.getElementById("countdown-timer").innerHTML = "С Днем Рождения, Котеночек Любимый!❤️‍🔥";
+        }
+    }
+
+    // Обновление счетчика каждую секунду
+    setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
